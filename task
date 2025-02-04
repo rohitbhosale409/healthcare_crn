@@ -12,7 +12,7 @@ Doctor
     localhost:4000/doctor/register
     localhost:4000/doctor/dashboard
     localhost:4000/doctor/appointment
-    localhost:4000/doctor/billing
+    localhost:4000/doctor/billing 
 
 
     
