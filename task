@@ -1,0 +1,18 @@
+Patient
+    localhost:4000/patient/login
+    localhost:4000/patient/register
+    localhost:4000/patient/dashboard
+    localhost:4000/patient/appointment
+    localhost:4000/patient/prescription
+    localhost:4000/patient/reports
+    localhost:4000/patient/billing
+
+Doctor
+    localhost:4000/doctor/login
+    localhost:4000/doctor/register
+    localhost:4000/doctor/dashboard
+    localhost:4000/doctor/appointment
+    localhost:4000/doctor/billing
+
+
+    

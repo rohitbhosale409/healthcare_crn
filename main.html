@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+
+    <title>{{project.seoTitle}}</title>
+    <!-- SEO Description -->
+    <meta name="description" content="{{project.seoDescription}}">
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        as="style">
+
+    <!-- {headerScripts} -->
+
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8f8f8',
+                            100: '#e8e8e8',
+                            200: '#d3d3d3',
+                            300: '#a3a3a3',
+                            400: '#737373',
+                            500: '#525252',
+                            600: '#404040',
+                            700: '#262626',
+                            800: '#171717',
+                            900: '#0a0a0a',
+                            950: '#030303',
+                        },
+                        secondary: {
+                            50: '#f8f8f8',
+                            100: '#e8e8e8',
+                            200: '#d3d3d3',
+                            300: '#a3a3a3',
+                            400: '#737373',
+                            500: '#525252',
+                            600: '#404040',
+                            700: '#262626',
+                            800: '#171717',
+                            900: '#0a0a0a',
+                            950: '#030303',
+                        },
+                        accent: {
+                            50: '#f8f8f8',
+                            100: '#e8e8e8',
+                            200: '#d3d3d3',
+                            300: '#a3a3a3',
+                            400: '#737373',
+                            500: '#525252',
+                            600: '#404040',
+                            700: '#262626',
+                            800: '#171717',
+                            900: '#0a0a0a',
+                            950: '#030303',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    maxWidth: {
+                        '8xl': '88rem',
+                        '9xl': '96rem',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'fade-out': 'fadeOut 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'slide-down': 'slideDown 0.5s ease-out',
+                        'slide-left': 'slideLeft 0.5s ease-out',
+                        'slide-right': 'slideRight 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'scale-out': 'scaleOut 0.5s ease-out',
+                        'spin-slow': 'spin 3s linear infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeOut: {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideLeft: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideRight: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        scaleOut: {
+                            '0%': { transform: 'scale(1.1)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    },
+                    aspectRatio: {
+                        'portrait': '3/4',
+                        'landscape': '4/3',
+                        'ultrawide': '21/9',
+                    },
+                },
+            },
+            variants: {
+                extend: {
+                    opacity: ['disabled'],
+                    cursor: ['disabled'],
+                    backgroundColor: ['active', 'disabled'],
+                    textColor: ['active', 'disabled'],
+                },
+            },
+        }
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Dynamic Meta Tags -->
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="keywords" content="{{project.meta.keywords}}">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+    <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+    <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+    <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+    <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+    <meta property="og:title" content="{{project.meta.ogTitle}}">
+    <meta property="og:description" content="{{project.meta.ogDescription}}">
+    <meta property="og:image" content="{{project.meta.ogImage}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="{{project.name}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+    <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+    <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+    <!-- Base Styles -->
+    <style>
+        * {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Webkit browsers like Chrome, Safari, newer Edge */
+        *::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            a[href]:after {
+                content: " (" attr(href) ")";
+            }
+        }
+    </style>
+
+    <!-- Enhanced Image Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            const tempImage = new Image();
+                            tempImage.onload = () => {
+                                img.src = img.dataset.src;
+                                img.classList.remove('opacity-0');
+                                img.classList.add('opacity-100');
+                            };
+                            tempImage.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+
+            const loadImage = (img) => {
+                if ('loading' in HTMLImageElement.prototype) {
+                    img.loading = 'lazy';
+                }
+
+                img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+
+                img.onerror = () => {
+                    const width = img.getAttribute('width') || img.clientWidth || 300;
+                    const height = img.getAttribute('height') || img.clientHeight || 200;
+                    img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+                    img.alt = 'Image unavailable';
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100', 'error-image');
+                };
+
+                if (img.dataset.src) {
+                    imageObserver.observe(img);
+                } else {
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                }
+            };
+
+            document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+            // Watch for dynamically added images
+            new MutationObserver((mutations) => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === 1) {
+                            if (node.tagName === 'IMG') {
+                                loadImage(node);
+                            }
+                            node.querySelectorAll('img').forEach(loadImage);
+                        }
+                    });
+                });
+            }).observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+            // Create performance observer
+            const observer = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach((entry) => {
+                    if (entry.entryType === 'largest-contentful-paint') {
+                        // console.log(`LCP: ${entry.startTime}ms`);
+                    }
+                    if (entry.entryType === 'first-input') {
+                        // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+                    }
+                    if (entry.entryType === 'layout-shift') {
+                        // console.log(`CLS: ${entry.value}`);
+                    }
+                });
+            });
+
+            // Observe performance metrics
+            observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+            // Log basic performance metrics
+            window.addEventListener('load', () => {
+                const timing = performance.getEntriesByType('navigation')[0];
+                console.log({
+                    'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+                    'TCP Connection': timing.connectEnd - timing.connectStart,
+                    'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+                    'Page Load': timing.loadEventEnd - timing.navigationStart
+                });
+            });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+            document.body.classList.remove('offline');
+            console.log('Connection restored');
+        });
+
+        window.addEventListener('offline', () => {
+            document.body.classList.add('offline');
+            console.log('Connection lost');
+        });
+    </script>
+</head>
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+    </header>
+
+    <!-- Main content area -->
+    <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+    </main>
+
+    <!-- {bodyScripts} -->
+
+</body>
+
+</html>
+<element id="7068c9d7-a40f-4eac-8630-a020bc221851" data-section-id="7068c9d7-a40f-4eac-8630-a020bc221851">
+
+    <htmlCode>
+        <div id="root">
+            <div class="flex min-h-screen bg-[#E5E7EB]">
+                <!-- Sidebar Navigation -->
+                <nav class="fixed top-0 left-0 h-screen w-64 bg-white border-r border-neutral-200/30 hidden lg:block">
+                    <div class="px-6 py-4 border-b border-neutral-200/30">
+                        <h1 class="text-xl font-bold text-neutral-800">MediCRM</h1>
+                    </div>
+
+                    <div class="px-4 py-6">
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#home"
+                                    class="flex items-center px-4 py-3 text-neutral-700 rounded-lg bg-neutral-100 hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                        </path>
+                                    </svg>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patient/dashboard.html"
+                                    class="flex items-center px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patient/appointment.html"
+                                    class="flex items-center px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    Appointments
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patient/reports.html"
+                                    class="flex items-center px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patient/prescription.html"
+                                    class="flex items-center px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    Prescriptions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patient/billing.html"
+                                    class="flex items-center px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100 transition-all duration-300">
+                                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                    Billing
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-200/30">
+                        <div class="flex items-center">
+                            <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-neutral-700">Dr. Smith</p>
+                                <p class="text-xs text-neutral-500">Cardiologist</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Mobile Header -->
+                <div class="lg:hidden fixed top-0 left-0 right-0 bg-white border-b border-neutral-200/30 z-50"
+                    x-data="{ isOpen: false }">
+                    <div class="px-4 py-4 flex items-center justify-between">
+                        <h1 class="text-xl font-bold text-neutral-800">MediCRM</h1>
+                        <button type="button" @click="isOpen = !isOpen"
+                            class="p-2 rounded-lg bg-neutral-100 text-neutral-600 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                            <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                            <svg x-show="isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <div x-show="isOpen"
+                        class="absolute top-full left-0 right-0 bg-white border-b border-neutral-200/30"
+                        @click.away="isOpen = false">
+                        <div class="px-4 py-2">
+                            <ul class="space-y-2">
+                                <li>
+                                    <a href="#home"
+                                        class="block px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#appointments"
+                                        class="block px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100">Appointments</a>
+                                </li>
+                                <li>
+                                    <a href="#prescriptions"
+                                        class="block px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100">Prescriptions</a>
+                                </li>
+                                <li>
+                                    <a href="#reports"
+                                        class="block px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100">Reports</a>
+                                </li>
+                                <li>
+                                    <a href="#billing"
+                                        class="block px-4 py-3 text-neutral-600 rounded-lg hover:bg-neutral-100">Billing</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <main class="flex-1 ml-0 lg:ml-64 min-h-screen overflow-y-auto">
+                    <div class="sticky top-0 z-10 bg-white border-b border-neutral-200/30 hidden lg:block">
+                        <div class="px-6 py-4 flex items-center justify-between">
+                            <div class="flex items-center flex-1">
+                                <input type="search" placeholder="Search..."
+                                    class="w-64 px-4 py-2 rounded-lg bg-neutral-100 border-none focus:ring-2 focus:ring-neutral-200">
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <MountPoint>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // Active link handling
+                                const navLinks = document.querySelectorAll('nav a');
+                                const updateActiveLink = () => {
+                                    const hash = window.location.hash || '#home';
+                                    navLinks.forEach(link => {
+                                        if (link.getAttribute('href') === hash) {
+                                            link.classList.add('bg-neutral-100', 'text-neutral-700');
+                                            link.classList.remove('text-neutral-600');
+                                        } else {
+                                            link.classList.remove('bg-neutral-100', 'text-neutral-700');
+                                            link.classList.add('text-neutral-600');
+                                        }
+                                    });
+                                };
+
+                                window.addEventListener('hashchange', updateActiveLink);
+                                updateActiveLink();
+
+                                // Smooth scrolling
+                                document.documentElement.style.scrollBehavior = 'smooth';
+                            });
+                        </script>
+</element>
+
+<element id="8b0b3c7b-0649-4a1e-af24-3f09bb318c65" data-section-id="8b0b3c7b-0649-4a1e-af24-3f09bb318c65">
+    <htmlcode id="el-71q8l9k2">
+        <div id="authentication"
+            class="min-h-screen bg-[#E5E7EB] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md w-full bg-white rounded-lg border border-neutral-200/30 p-8">
+                <div class="text-center mb-8" style="display: flex; flex-direction: column;">
+                    <h1 class="text-2xl font-bold text-neutral-800 mb-2"
+                        style="justify-content: center; text-align: center;">MediCRM</h1>
+                    <p class="text-neutral-600">Sign in to your account</p>
+                </div>
+
+                <div class="space-y-4" x-data="{ isPatient: true }">
+                    <div class="flex rounded-lg border border-neutral-200/30 p-1">
+                        <button @click="isPatient = true"
+                            :class="isPatient ? 'bg-neutral-100 text-neutral-800' : 'text-neutral-600'"
+                            class="flex-1 py-2 rounded-md transition-all duration-300 bg-neutral-100 text-neutral-800">
+                            Patient Login
+                        </button>
+                        <button @click="isPatient = false"
+                            :class="!isPatient ? 'bg-neutral-100 text-neutral-800' : 'text-neutral-600'"
+                            class="flex-1 py-2 rounded-md transition-all duration-300 text-neutral-600">
+                            Doctor Login
+                        </button>
+                    </div>
+
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+                            <input type="email" required=""
+                                class="w-full px-4 py-2 rounded-lg bg-neutral-50 border border-neutral-200/30 focus:ring-2 focus:ring-neutral-200 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Password</label>
+                            <input type="password" required=""
+                                class="w-full px-4 py-2 rounded-lg bg-neutral-50 border border-neutral-200/30 focus:ring-2 focus:ring-neutral-200 focus:border-transparent">
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox"
+                                    class="h-4 w-4 text-neutral-600 rounded border-neutral-300 focus:ring-neutral-500">
+                                <label class="ml-2 text-sm text-neutral-600">Remember me</label>
+                            </div>
+                            <a href="#" class="text-sm text-neutral-600 hover:text-neutral-800">Forgot password?</a>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3 px-4 rounded-lg bg-neutral-800 text-white hover:bg-neutral-700 transition-colors duration-300">
+                            Sign in
+                        </button>
+                    </form>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-neutral-600">
+                            Don't have an account?
+                            <a href="#" class="font-medium text-neutral-800 hover:text-neutral-900">Register here</a>
+                        </p>
+                    </div>
+
+                    <div x-show="isPatient" class="mt-6 p-4 bg-neutral-50 rounded-lg border border-neutral-200/30">
+                        <h3 class="text-sm font-medium text-neutral-700 mb-2">Available Doctors:</h3>
+                        <ul class="text-sm text-neutral-600 space-y-1">
+                            <li>• Dr. Gorad</li>
+                            <li>• Dr. Pushpak Chirmade</li>
+                        </ul>
+                    </div>
+
+                    <div x-show="!isPatient" class="mt-6 p-4 bg-neutral-50 rounded-lg border border-neutral-200/30"
+                        style="display: none;">
+                        <h3 class="text-sm font-medium text-neutral-700 mb-2">Current Patients:</h3>
+                        <ul class="text-sm text-neutral-600 space-y-1">
+                            <li>• Rahul More</li>
+                            <li>• Yogesh More</li>
+                            <li>• Maruti Kate</li>
+                            <li>• Mahesh Ghule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </htmlcode>
+</element>
+<element id="fa51fcff-a485-41e3-9989-ca9da9e87576" data-section-id="fa51fcff-a485-41e3-9989-ca9da9e87576">
+
+    <htmlCode>
+        <div id="patient-dashboard" class="p-6">
+            <!-- Welcome Section -->
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold text-neutral-800">Welcome, John Doe</h1>
+                <p class="text-neutral-600">Your health is our priority</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Upcoming Appointments</p>
+                            <p class="text-xl font-bold text-neutral-800">2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Active Prescriptions</p>
+                            <p class="text-xl font-bold text-neutral-800">3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Wallet Balance</p>
+                            <p class="text-xl font-bold text-neutral-800">₹2,500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Pending Reports</p>
+                            <p class="text-xl font-bold text-neutral-800">1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upc`oming Appointments -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-neutral-800">Upcoming Appointments</h2>
+                    <button class="text-sm text-neutral-600 hover:text-neutral-800">View All</button>
+                </div>
+                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-neutral-50">
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Doctor</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Date</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Time</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Status</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-200/30">
+                                <tr>
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center">
+                                            <img src="https://avatar.iran.liara.run/public" alt="Dr. Smith"
+                                                class="w-8 h-8 rounded-full">
+                                            <div class="ml-3">
+                                                <p class="text-sm font-medium text-neutral-800">Dr. Smith</p>
+                                                <p class="text-xs text-neutral-600">Cardiologist</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-sm text-neutral-600">Dec 10, 2023</td>
+                                    <td class="px-4 py-3 text-sm text-neutral-600">10:30 AM</td>
+                                    <td class="px-4 py-3">
+                                        <span
+                                            class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Confirmed</span>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <button class="text-sm text-red-600 hover:text-red-800">Cancel</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center">
+                                            <img src="https://avatar.iran.liara.run/public" alt="Dr. Johnson"
+                                                class="w-8 h-8 rounded-full">
+                                            <div class="ml-3">
+                                                <p class="text-sm font-medium text-neutral-800">Dr. Johnson</p>
+                                                <p class="text-xs text-neutral-600">Neurologist</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 text-sm text-neutral-600">Dec 15, 2023</td>
+                                    <td class="px-4 py-3 text-sm text-neutral-600">2:00 PM</td>
+                                    <td class="px-4 py-3">
+                                        <span
+                                            class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <button class="text-sm text-red-600 hover:text-red-800">Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-bold text-neutral-800">Recent Prescriptions</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800">View All</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800">Blood Pressure Medication</p>
+                                </div>
+                                <span class="text-xs text-neutral-600">Dec 5, 2023</span>
+                            </div>
+                            <p class="text-sm text-neutral-600">Prescribed by Dr. Smith</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800">Antibiotics Course</p>
+                                </div>
+                                <span class="text-xs text-neutral-600">Dec 1, 2023</span>
+                            </div>
+                            <p class="text-sm text-neutral-600">Prescribed by Dr. Johnson</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-bold text-neutral-800">Recent Reports</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800">View All</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800">Blood Test Report</p>
+                                </div>
+                                <button class="text-sm text-neutral-600 hover:text-neutral-800">Download</button>
+                            </div>
+                            <p class="text-sm text-neutral-600">Generated on Dec 3, 2023</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800">X-Ray Report</p>
+                                </div>
+                                <button class="text-sm text-neutral-600 hover:text-neutral-800">Download</button>
+                            </div>
+                            <p class="text-sm text-neutral-600">Generated on Nov 28, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </htmlCode>
+</element>
+<element id="57b547ac-a847-4e75-97c2-2ec54a3411a0" data-section-id="57b547ac-a847-4e75-97c2-2ec54a3411a0">
+
+
+    <htmlcode id="el-mp687f1o">
+        <div id="doctor-dashboard" class="p-6">
+            <!-- Welcome Section -->
+            <div class="mb-6" id="el-whglo97p">
+                <h1 class="text-2xl font-bold text-neutral-800" id="el-pvh2r1ln" contenteditable="false">Welcome, Dr.
+                    Gorad</h1>
+                <p class="text-neutral-600" id="el-hesh8cql">Cardiologist | ID: DOC-2023-456</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6" id="el-aq1z09u7">
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-1iawf976">
+                    <div class="flex items-center" id="el-94ymggv9">
+                        <div class="p-2 bg-neutral-100 rounded-lg" id="el-wr8316x9">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                id="el-o8emmhbc">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                    id="el-aa8s7g02"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4" id="el-tkphr9bz">
+                            <p class="text-sm text-neutral-600" id="el-ea339401">Today's Patients</p>
+                            <p class="text-xl font-bold text-neutral-800" id="el-oid801p0">12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-cdlg1zqx">
+                    <div class="flex items-center" id="el-ir9uyg9k">
+                        <div class="p-2 bg-neutral-100 rounded-lg" id="el-0b10ht0y">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                id="el-ovkn4mly">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                    id="el-kj957pmn"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4" id="el-jlnjen3w">
+                            <p class="text-sm text-neutral-600" id="el-0if8y8q5">Pending Appointments</p>
+                            <p class="text-xl font-bold text-neutral-800" id="el-9fnog2u1">8</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-9vgbkxh5">
+                    <div class="flex items-center" id="el-rah7gz6f">
+                        <div class="p-2 bg-neutral-100 rounded-lg" id="el-h4ijkqgs">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                id="el-ziwz30ck">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    id="el-dynrj60g"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4" id="el-s3ztbw76">
+                            <p class="text-sm text-neutral-600" id="el-0r1w9q77">Prescriptions Today</p>
+                            <p class="text-xl font-bold text-neutral-800" id="el-1dhraywc">15</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-c717m9fx">
+                    <div class="flex items-center" id="el-nj0owm3g">
+                        <div class="p-2 bg-neutral-100 rounded-lg" id="el-yxcppsg2">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                id="el-wph2ho10">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                                    id="el-z74k6f0k"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4" id="el-pqn0tp16">
+                            <p class="text-sm text-neutral-600" id="el-evr5yfc0">Clinical Notes</p>
+                            <p class="text-xl font-bold text-neutral-800" id="el-ueya4lt2">23</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Schedule -->
+            <div class="mb-6" id="el-2c4uia42">
+                <div class="flex items-center justify-between mb-4" id="el-ploqyerk">
+                    <h2 class="text-lg font-bold text-neutral-800" id="el-9dao7pgm">Today's Schedule</h2>
+                    <button class="text-sm text-neutral-600 hover:text-neutral-800" id="el-j1kqtegd">View Full
+                        Schedule</button>
+                </div>
+                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden" id="el-3our66qa">
+                    <table class="w-full" id="el-wavl3sjr">
+                        <thead id="el-18x4956e">
+                            <tr class="bg-neutral-50" id="el-3vn6iips">
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600" id="el-nnqsyrii">
+                                    Time</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600" id="el-4lvs6vdi">
+                                    Patient</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600" id="el-xftqy2a9">
+                                    Type</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600" id="el-nzvun91m">
+                                    Status</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600" id="el-at4zf9bg">
+                                    Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-200/30" id="el-93hgf9uv">
+                            <tr id="el-86riia27">
+                                <td class="px-4 py-3 text-sm text-neutral-600" id="el-79nwqltw">09:00 AM</td>
+                                <td class="px-4 py-3" id="el-68wrscl3">
+                                    <div class="flex items-center" id="el-v0qb1nt5">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full transition-opacity duration-300 opacity-100"
+                                            loading="lazy" id="el-g6fnf52q">
+                                        <div class="ml-3" id="el-hn3yx8vs">
+                                            <p class="text-sm font-medium text-neutral-800" id="el-qbkemkmf">John Doe
+                                            </p>
+                                            <p class="text-xs text-neutral-600" id="el-d5ya4024">#PAT-2023-001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-neutral-600" id="el-lhwxcnve">Follow-up</td>
+                                <td class="px-4 py-3" id="el-kpdyme9m">
+                                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full"
+                                        id="el-97prc3n2">In Progress</span>
+                                </td>
+                                <td class="px-4 py-3" id="el-8gbx1add">
+                                    <button class="text-sm text-neutral-600 hover:text-neutral-800"
+                                        id="el-4867b8uh">View Details</button>
+                                </td>
+                            </tr>
+                            <tr id="el-suvh5033">
+                                <td class="px-4 py-3 text-sm text-neutral-600" id="el-8s8quhae">10:30 AM</td>
+                                <td class="px-4 py-3" id="el-wdjjbnes">
+                                    <div class="flex items-center" id="el-ezbjvowm">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full transition-opacity duration-300 opacity-100"
+                                            loading="lazy" id="el-773sah8b">
+                                        <div class="ml-3" id="el-mc7tpbcv">
+                                            <p class="text-sm font-medium text-neutral-800" id="el-x4qox34b">Jane Smith
+                                            </p>
+                                            <p class="text-xs text-neutral-600" id="el-mj774cit">#PAT-2023-002</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-neutral-600" id="el-471c8quk">New Patient</td>
+                                <td class="px-4 py-3" id="el-ycrf2ezm">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full"
+                                        id="el-r823lz2w">Upcoming</span>
+                                </td>
+                                <td class="px-4 py-3" id="el-ygb356zy">
+                                    <button class="text-sm text-neutral-600 hover:text-neutral-800"
+                                        id="el-5ha2l1t5">View Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Activity Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="el-gvbkgv6i">
+                <!-- Recent Clinical Notes -->
+                <div id="el-ch0wcyrd">
+                    <div class="flex items-center justify-between mb-4" id="el-rkerf1fg">
+                        <h2 class="text-lg font-bold text-neutral-800" id="el-ejbtre6x">Recent Clinical Notes</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800" id="el-ahpdonh9">View
+                            All</button>
+                    </div>
+                    <div class="space-y-4" id="el-5naj5vfh">
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-chr8gtwe">
+                            <div class="flex items-center justify-between mb-2" id="el-ckgqtahp">
+                                <div class="flex items-center" id="el-1cffzvdg">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" id="el-htbagnhb">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            id="el-9dzkae3p"></path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800" id="el-nhrnekg4">Cardiac
+                                        Evaluation - John Doe</p>
+                                </div>
+                                <span class="text-xs text-neutral-600" id="el-q3xtlwn5">Today, 9:15 AM</span>
+                            </div>
+                            <p class="text-sm text-neutral-600 line-clamp-2" id="el-i54m0qso">Patient shows improved
+                                cardiac function. BP: 120/80. Recommended continued medication...</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-r8gsyy1c">
+                            <div class="flex items-center justify-between mb-2" id="el-zh93cdqq">
+                                <div class="flex items-center" id="el-ngbaofir">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" id="el-91lwddzj">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            id="el-nex4kjay"></path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800" id="el-6fwdj65i">Follow-up -
+                                        Jane Smith</p>
+                                </div>
+                                <span class="text-xs text-neutral-600" id="el-cvopqw13">Yesterday, 3:30 PM</span>
+                            </div>
+                            <p class="text-sm text-neutral-600 line-clamp-2" id="el-j6vt2z3w">Post-procedure recovery
+                                progressing well. No complications observed...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Prescriptions -->
+                <div id="el-kvaatyhk">
+                    <div class="flex items-center justify-between mb-4" id="el-1y9rqccv">
+                        <h2 class="text-lg font-bold text-neutral-800" id="el-qosqnkcd">Recent Prescriptions</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800" id="el-uuroq5ji">View
+                            All</button>
+                    </div>
+                    <div class="space-y-4" id="el-y0ghxz68">
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-6me8h1zr">
+                            <div class="flex items-center justify-between mb-2" id="el-0t3x4chk">
+                                <div class="flex items-center" id="el-ecbd6b89">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" id="el-6n71i1fl">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                            id="el-p3f9jz4g"></path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800" id="el-51xgvpfl">John Doe -
+                                        Cardiac Medication</p>
+                                </div>
+                                <button class="text-sm text-neutral-600 hover:text-neutral-800"
+                                    id="el-9qw8a2o4">Edit</button>
+                            </div>
+                            <p class="text-sm text-neutral-600" id="el-rd1osrwa">Prescribed: Today, 9:30 AM</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-neutral-200/30" id="el-j2177070">
+                            <div class="flex items-center justify-between mb-2" id="el-5we6chue">
+                                <div class="flex items-center" id="el-mky9xd4u">
+                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" id="el-tf5enpz9">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                            id="el-thl12mas"></path>
+                                    </svg>
+                                    <p class="ml-2 text-sm font-medium text-neutral-800" id="el-nrjriff5">Jane Smith -
+                                        Post-op Medication</p>
+                                </div>
+                                <button class="text-sm text-neutral-600 hover:text-neutral-800"
+                                    id="el-m2s24jq3">Edit</button>
+                            </div>
+                            <p class="text-sm text-neutral-600" id="el-zpz4kpp6">Prescribed: Yesterday, 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </htmlcode>
+</element>
+<element id="9179dac3-4249-4785-820b-3058a9651e95" data-section-id="9179dac3-4249-4785-820b-3058a9651e95">
+
+    <htmlCode>
+        <div id="admin-dashboard" class="p-6">
+            <!-- Welcome Section -->
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold text-neutral-800">Hospital Administrator Dashboard</h1>
+                <p class="text-neutral-600">City Hospital | Branch: New Delhi</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Total Patients</p>
+                            <p class="text-xl font-bold text-neutral-800">2,547</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Active Doctors</p>
+                            <p class="text-xl font-bold text-neutral-800">45</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Today's Appointments</p>
+                            <p class="text-xl font-bold text-neutral-800">124</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-neutral-100 rounded-lg">
+                            <svg class="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-neutral-600">Revenue (Today)</p>
+                            <p class="text-xl font-bold text-neutral-800">₹1.2L</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Overview -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-neutral-800">Department Overview</h2>
+                    <button class="text-sm text-neutral-600 hover:text-neutral-800">View Details</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-medium text-neutral-800">Cardiology</h3>
+                            <span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Active</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Doctors</span>
+                                <span class="text-neutral-800">12</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Patients</span>
+                                <span class="text-neutral-800">45</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-medium text-neutral-800">Neurology</h3>
+                            <span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Active</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Doctors</span>
+                                <span class="text-neutral-800">8</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Patients</span>
+                                <span class="text-neutral-800">32</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-medium text-neutral-800">Orthopedics</h3>
+                            <span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Active</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Doctors</span>
+                                <span class="text-neutral-800">10</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Patients</span>
+                                <span class="text-neutral-800">38</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-lg border border-neutral-200/30">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-medium text-neutral-800">Pediatrics</h3>
+                            <span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Active</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Doctors</span>
+                                <span class="text-neutral-800">15</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-600">Patients</span>
+                                <span class="text-neutral-800">52</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Appointments -->
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-bold text-neutral-800">Recent Appointments</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800">View All</button>
+                    </div>
+                    <div class="bg-white rounded-lg border border-neutral-200/30">
+                        <div class="p-4 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Rahul Sharma</p>
+                                        <p class="text-xs text-neutral-600">Dr. Patel - Cardiology</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-neutral-600">10:00 AM</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Priya Singh</p>
+                                        <p class="text-xs text-neutral-600">Dr. Kumar - Neurology</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-neutral-600">11:30 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Registrations -->
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-bold text-neutral-800">Recent Registrations</h2>
+                        <button class="text-sm text-neutral-600 hover:text-neutral-800">View All</button>
+                    </div>
+                    <div class="bg-white rounded-lg border border-neutral-200/30">
+                        <div class="p-4 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Amit Patel</p>
+                                        <p class="text-xs text-neutral-600">New Patient</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-neutral-600">2 hours ago</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Doctor"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Dr. Meera Shah</p>
+                                        <p class="text-xs text-neutral-600">New Doctor - Pediatrics</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-neutral-600">5 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </htmlCode>
+</element>
+<element id="eee5122a-bcdb-4f94-a331-4930f64f2c63" data-section-id="eee5122a-bcdb-4f94-a331-4930f64f2c63">
+
+    <htmlCode>
+        <div id="appointment-management" class="p-6">
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold text-neutral-800">Appointment Management</h1>
+                <p class="text-neutral-600">Schedule and manage appointments</p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="mb-6 flex flex-wrap gap-4">
+                <button
+                    class="flex items-center px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    New Appointment
+                </button>
+                <button
+                    class="flex items-center px-4 py-2 bg-white border border-neutral-200/30 text-neutral-800 rounded-lg hover:bg-neutral-50 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"></path>
+                    </svg>
+                    Export Schedule
+                </button>
+            </div>
+
+            <!-- Calendar View -->
+            <div class="mb-6">
+                <div class="bg-white border border-neutral-200/30 rounded-lg overflow-hidden">
+                    <div class="p-4 border-b border-neutral-200/30">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <button class="p-2 hover:bg-neutral-100 rounded-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <h2 class="text-lg font-bold">December 2023</h2>
+                                <button class="p-2 hover:bg-neutral-100 rounded-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-sm bg-neutral-800 text-white rounded-lg">Day</button>
+                                <button
+                                    class="px-3 py-1 text-sm bg-neutral-100 text-neutral-800 rounded-lg">Week</button>
+                                <button
+                                    class="px-3 py-1 text-sm bg-neutral-100 text-neutral-800 rounded-lg">Month</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Daily Schedule -->
+                    <div class="divide-y divide-neutral-200/30">
+                        <div class="p-4 hover:bg-neutral-50">
+                            <div class="flex items-start">
+                                <div class="w-20 text-neutral-600">09:00 AM</div>
+                                <div class="flex-1 ml-4">
+                                    <div class="bg-blue-100 text-blue-800 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-medium">Rahul Sharma</p>
+                                                <p class="text-sm">General Checkup</p>
+                                            </div>
+                                            <div class="flex space-x-2">
+                                                <button class="p-1 hover:bg-blue-200 rounded">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 hover:bg-blue-200 rounded">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 hover:bg-neutral-50">
+                            <div class="flex items-start">
+                                <div class="w-20 text-neutral-600">11:30 AM</div>
+                                <div class="flex-1 ml-4">
+                                    <div class="bg-green-100 text-green-800 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-medium">Priya Singh</p>
+                                                <p class="text-sm">Follow-up Consultation</p>
+                                            </div>
+                                            <div class="flex space-x-2">
+                                                <button class="p-1 hover:bg-green-200 rounded">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 hover:bg-green-200 rounded">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments List -->
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-neutral-800">Upcoming Appointments</h2>
+                    <div class="flex items-center space-x-2">
+                        <input type="search" placeholder="Search appointments..."
+                            class="px-4 py-2 bg-white border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                        <select
+                            class="px-4 py-2 bg-white border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                            <option>All Departments</option>
+                            <option>Cardiology</option>
+                            <option>Neurology</option>
+                            <option>Orthopedics</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-neutral-200/30 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-neutral-50">
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Patient</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Date & Time</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Department</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Doctor</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Status</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-200/30">
+                            <tr class="hover:bg-neutral-50">
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-neutral-800">Amit Kumar</p>
+                                            <p class="text-xs text-neutral-600">#PAT-2023-001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Dec 10, 2023 10:00 AM</td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Cardiology</td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Dr. Patel</td>
+                                <td class="px-4 py-3">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Confirmed</span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <button class="text-sm text-neutral-600 hover:text-neutral-800">View
+                                        Details</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-neutral-50">
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-neutral-800">Neha Sharma</p>
+                                            <p class="text-xs text-neutral-600">#PAT-2023-002</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Dec 10, 2023 11:30 AM</td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Neurology</td>
+                                <td class="px-4 py-3 text-sm text-neutral-600">Dr. Shah</td>
+                                <td class="px-4 py-3">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <button class="text-sm text-neutral-600 hover:text-neutral-800">View
+                                        Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </htmlCode>
+</element>
+<element id="07269438-8cd6-4857-b691-7cd6dd2d3d3d" data-section-id="07269438-8cd6-4857-b691-7cd6dd2d3d3d">
+
+    <htmlCode>
+        <div id="patient-records" class="p-6">
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold text-neutral-800">Patient Records</h1>
+                <p class="text-neutral-600">Manage and view patient information</p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="mb-6 bg-white rounded-lg border border-neutral-200/30 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <input type="search" placeholder="Search patients..."
+                        class="px-4 py-2 bg-neutral-50 border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                    <select
+                        class="px-4 py-2 bg-neutral-50 border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                        <option>All Departments</option>
+                        <option>Cardiology</option>
+                        <option>Neurology</option>
+                        <option>Orthopedics</option>
+                    </select>
+                    <select
+                        class="px-4 py-2 bg-neutral-50 border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                        <option>All Doctors</option>
+                        <option>Dr. Patel</option>
+                        <option>Dr. Shah</option>
+                        <option>Dr. Kumar</option>
+                    </select>
+                    <button
+                        class="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors">
+                        Add New Patient
+                    </button>
+                </div>
+            </div>
+
+            <!-- Patient List -->
+            <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden mb-6">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-neutral-50">
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Patient Details</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Contact Info</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Last Visit</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Primary Doctor</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Status</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-200/30">
+                        <tr class="hover:bg-neutral-50">
+                            <td class="px-4 py-3">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Rahul Sharma</p>
+                                        <p class="text-xs text-neutral-600">#PAT-2023-001</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3">
+                                <p class="text-sm text-neutral-600">+91 98765 43210</p>
+                                <p class="text-xs text-neutral-600">rahul@email.com</p>
+                            </td>
+                            <td class="px-4 py-3">
+                                <p class="text-sm text-neutral-600">Dec 5, 2023</p>
+                                <p class="text-xs text-neutral-600">Cardiology</p>
+                            </td>
+                            <td class="px-4 py-3">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Doctor"
+                                        class="w-8 h-8 rounded-full">
+                                    <p class="text-sm text-neutral-600 ml-2">Dr. Patel</p>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-neutral-50">
+                            <td class="px-4 py-3">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                        class="w-10 h-10 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-neutral-800">Priya Singh</p>
+                                        <p class="text-xs text-neutral-600">#PAT-2023-002</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3">
+                                <p class="text-sm text-neutral-600">+91 98765 43211</p>
+                                <p class="text-xs text-neutral-600">priya@email.com</p>
+                            </td>
+                            <td class="px-4 py-3">
+                                <p class="text-sm text-neutral-600">Dec 3, 2023</p>
+                                <p class="text-xs text-neutral-600">Neurology</p>
+                            </td>
+                            <td class="px-4 py-3">
+                                <div class="flex items-center">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Doctor"
+                                        class="w-8 h-8 rounded-full">
+                                    <p class="text-sm text-neutral-600 ml-2">Dr. Shah</p>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center justify-between">
+                <div class="text-sm text-neutral-600">
+                    Showing 1 to 10 of 50 results
+                </div>
+                <div class="flex space-x-2">
+                    <button
+                        class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">Previous</button>
+                    <button class="px-3 py-1 bg-neutral-800 text-white rounded-lg">1</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">2</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">3</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">Next</button>
+                </div>
+            </div>
+        </div>
+    </htmlCode>
+</element>
+<element id="014e2014-0c64-4b40-b48a-01725b540aae" data-section-id="014e2014-0c64-4b40-b48a-01725b540aae">
+
+    <htmlCode>
+        <div id="billing-payments" class="p-6">
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold text-neutral-800">Billing & Payments</h1>
+                <p class="text-neutral-600">Manage bills and payment transactions</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg border border-neutral-200/30">
+                    <p class="text-sm text-neutral-600 mb-1">Total Revenue (Today)</p>
+                    <p class="text-2xl font-bold text-neutral-800">₹45,250</p>
+                    <div class="flex items-center text-green-600 text-sm mt-2">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <span>12% increase</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border border-neutral-200/30">
+                    <p class="text-sm text-neutral-600 mb-1">Pending Payments</p>
+                    <p class="text-2xl font-bold text-neutral-800">₹12,800</p>
+                    <p class="text-sm text-neutral-600 mt-2">15 pending bills</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border border-neutral-200/30">
+                    <p class="text-sm text-neutral-600 mb-1">Smart Card Balance</p>
+                    <p class="text-2xl font-bold text-neutral-800">₹85,400</p>
+                    <p class="text-sm text-neutral-600 mt-2">42 active cards</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border border-neutral-200/30">
+                    <p class="text-sm text-neutral-600 mb-1">Insurance Claims</p>
+                    <p class="text-2xl font-bold text-neutral-800">₹1,25,000</p>
+                    <p class="text-sm text-neutral-600 mt-2">8 pending claims</p>
+                </div>
+            </div>
+
+            <!-- Smart Card Topup Section -->
+            <div class="mb-6 bg-white rounded-lg border border-neutral-200/30 p-4">
+                <h2 class="text-lg font-bold text-neutral-800 mb-4">Quick Smart Card Topup</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input type="text" placeholder="Enter Card Number"
+                        class="px-4 py-2 bg-neutral-50 border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                    <select
+                        class="px-4 py-2 bg-neutral-50 border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                        <option>Select Amount</option>
+                        <option>₹500</option>
+                        <option>₹1000</option>
+                        <option>₹2000</option>
+                        <option>Custom Amount</option>
+                    </select>
+                    <button
+                        class="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors">
+                        Recharge Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-neutral-800">Recent Transactions</h2>
+                    <div class="flex space-x-2">
+                        <input type="date"
+                            class="px-4 py-2 bg-white border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                        <select
+                            class="px-4 py-2 bg-white border border-neutral-200/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-200">
+                            <option>All Types</option>
+                            <option>Consultation</option>
+                            <option>Laboratory</option>
+                            <option>Pharmacy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-neutral-50">
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Transaction ID</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Patient</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Service</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Amount</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Status</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-neutral-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-200/30">
+                            <tr class="hover:bg-neutral-50">
+                                <td class="px-4 py-3">
+                                    <p class="text-sm font-medium text-neutral-800">#TXN-2023-001</p>
+                                    <p class="text-xs text-neutral-600">Dec 10, 2023</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-neutral-800">Rahul Sharma</p>
+                                            <p class="text-xs text-neutral-600">#PAT-2023-001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <p class="text-sm text-neutral-600">Consultation</p>
+                                    <p class="text-xs text-neutral-600">Cardiology</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <p class="text-sm font-medium text-neutral-800">₹1,500</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Paid</span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex space-x-2">
+                                        <button
+                                            class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Receipt</button>
+                                        <button
+                                            class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Details</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-neutral-50">
+                                <td class="px-4 py-3">
+                                    <p class="text-sm font-medium text-neutral-800">#TXN-2023-002</p>
+                                    <p class="text-xs text-neutral-600">Dec 10, 2023</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <img src="https://avatar.iran.liara.run/public" alt="Patient"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-neutral-800">Priya Singh</p>
+                                            <p class="text-xs text-neutral-600">#PAT-2023-002</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <p class="text-sm text-neutral-600">Laboratory</p>
+                                    <p class="text-xs text-neutral-600">Blood Test</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <p class="text-sm font-medium text-neutral-800">₹2,800</p>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex space-x-2">
+                                        <button
+                                            class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Receipt</button>
+                                        <button
+                                            class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Details</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center justify-between">
+                <div class="text-sm text-neutral-600">
+                    Showing 1 to 10 of 50 transactions
+                </div>
+                <div class="flex space-x-2">
+                    <button
+                        class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">Previous</button>
+                    <button class="px-3 py-1 bg-neutral-800 text-white rounded-lg">1</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">2</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">3</button>
+                    <button class="px-3 py-1 border border-neutral-200/30 rounded-lg hover:bg-neutral-50">Next</button>
+                </div>
+            </div>
+        </div>
+    </htmlCode>
+</element>
+<element id="7f6f2d28-bf2b-4bf8-bd72-7f108c42b7e2" data-section-id="7f6f2d28-bf2b-4bf8-bd72-7f108c42b7e2">
+
+    <htmlCode>
+        <div id="root">
+            <section id="pharmacy-management"
+                class="min-h-screen bg-neutral-900 text-neutral-200 py-8 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Header -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-4">Pharmacy Management</h2>
+                        <p class="text-neutral-400">Efficiently manage your hospital's pharmacy operations with our
+                            comprehensive system.</p>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div
+                            class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm hover:border-neutral-600/50 transition duration-300">
+                            <div class="text-emerald-500 text-2xl font-bold mb-2">2,456</div>
+                            <div class="text-neutral-400">Available Medicines</div>
+                        </div>
+                        <div
+                            class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm hover:border-neutral-600/50 transition duration-300">
+                            <div class="text-emerald-500 text-2xl font-bold mb-2">186</div>
+                            <div class="text-neutral-400">Pending Orders</div>
+                        </div>
+                        <div
+                            class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm hover:border-neutral-600/50 transition duration-300">
+                            <div class="text-emerald-500 text-2xl font-bold mb-2">45</div>
+                            <div class="text-neutral-400">Low Stock Items</div>
+                        </div>
+                        <div
+                            class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm hover:border-neutral-600/50 transition duration-300">
+                            <div class="text-emerald-500 text-2xl font-bold mb-2">₹1.2M</div>
+                            <div class="text-neutral-400">Monthly Revenue</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Recent Orders -->
+                        <div class="lg:col-span-2">
+                            <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                                <h3 class="text-xl font-semibold text-white mb-4">Recent Orders</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b border-neutral-700/30">
+                                                <th class="text-left py-3 px-4 text-neutral-400">Order ID</th>
+                                                <th class="text-left py-3 px-4 text-neutral-400">Patient</th>
+                                                <th class="text-left py-3 px-4 text-neutral-400">Status</th>
+                                                <th class="text-left py-3 px-4 text-neutral-400">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-neutral-700/30">
+                                                <td class="py-3 px-4">#ORD-2345</td>
+                                                <td class="py-3 px-4">Rahul Sharma</td>
+                                                <td class="py-3 px-4"><span
+                                                        class="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-full text-sm">Completed</span>
+                                                </td>
+                                                <td class="py-3 px-4">₹1,250</td>
+                                            </tr>
+                                            <tr class="border-b border-neutral-700/30">
+                                                <td class="py-3 px-4">#ORD-2344</td>
+                                                <td class="py-3 px-4">Priya Patel</td>
+                                                <td class="py-3 px-4"><span
+                                                        class="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded-full text-sm">Pending</span>
+                                                </td>
+                                                <td class="py-3 px-4">₹2,800</td>
+                                            </tr>
+                                            <tr class="border-b border-neutral-700/30">
+                                                <td class="py-3 px-4">#ORD-2343</td>
+                                                <td class="py-3 px-4">Amit Kumar</td>
+                                                <td class="py-3 px-4"><span
+                                                        class="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-full text-sm">Completed</span>
+                                                </td>
+                                                <td class="py-3 px-4">₹950</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="lg:col-span-1">
+                            <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                                <h3 class="text-xl font-semibold text-white mb-4">Quick Actions</h3>
+                                <div class="space-y-4">
+                                    <button
+                                        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                                        New Order
+                                    </button>
+                                    <button
+                                        class="w-full bg-neutral-700 hover:bg-neutral-600 text-white py-2 px-4 rounded-lg transition duration-300">
+                                        Update Inventory
+                                    </button>
+                                    <button
+                                        class="w-full bg-neutral-700 hover:bg-neutral-600 text-white py-2 px-4 rounded-lg transition duration-300">
+                                        Generate Report
+                                    </button>
+                                    <button
+                                        class="w-full bg-neutral-700 hover:bg-neutral-600 text-white py-2 px-4 rounded-lg transition duration-300">
+                                        Supplier Management
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Low Stock Alert -->
+                            <div class="mt-8 bg-red-900/20 border border-red-700/30 rounded-lg p-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Low Stock Alert</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-neutral-300">Paracetamol 500mg</span>
+                                        <span class="text-red-400">5 units left</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-neutral-300">Amoxicillin 250mg</span>
+                                        <span class="text-red-400">8 units left</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-neutral-300">Vitamin B Complex</span>
+                                        <span class="text-red-400">3 units left</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </htmlCode>
+</element>
+<element id="c8404ed2-1f1e-43a6-bbb4-55406ef52279" data-section-id="c8404ed2-1f1e-43a6-bbb4-55406ef52279">
+
+    <htmlCode>
+        <div id="root">
+            <section id="reports-analytics"
+                class="min-h-screen bg-neutral-900 text-neutral-200 py-8 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Header -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-4">Reports & Analytics</h2>
+                        <p class="text-neutral-400">Comprehensive insights and analytics to make data-driven decisions.
+                        </p>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <div class="text-emerald-500 text-2xl font-bold mb-2">2,845</div>
+                            <div class="text-neutral-400">Total Patients</div>
+                            <div class="text-emerald-500 text-sm">↑ 12% vs last month</div>
+                        </div>
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <div class="text-blue-500 text-2xl font-bold mb-2">456</div>
+                            <div class="text-neutral-400">Active Cases</div>
+                            <div class="text-blue-500 text-sm">↑ 5% vs last month</div>
+                        </div>
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <div class="text-purple-500 text-2xl font-bold mb-2">89%</div>
+                            <div class="text-neutral-400">Recovery Rate</div>
+                            <div class="text-purple-500 text-sm">↑ 3% vs last month</div>
+                        </div>
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <div class="text-yellow-500 text-2xl font-bold mb-2">₹4.2M</div>
+                            <div class="text-neutral-400">Revenue</div>
+                            <div class="text-yellow-500 text-sm">↑ 8% vs last month</div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        <!-- Patient Demographics -->
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <h3 class="text-xl font-semibold text-white mb-6">Patient Demographics</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span>Age 0-18</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-blue-500 rounded-full" style="width: 25%"></div>
+                                        </div>
+                                    </div>
+                                    <span>25%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Age 19-40</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-blue-500 rounded-full" style="width: 45%"></div>
+                                        </div>
+                                    </div>
+                                    <span>45%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Age 41-60</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-blue-500 rounded-full" style="width: 20%"></div>
+                                        </div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Age 60+</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-blue-500 rounded-full" style="width: 10%"></div>
+                                        </div>
+                                    </div>
+                                    <span>10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Department Performance -->
+                        <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                            <h3 class="text-xl font-semibold text-white mb-6">Department Performance</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span>Cardiology</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-emerald-500 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <span>85%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Neurology</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-emerald-500 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                    <span>78%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Pediatrics</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-emerald-500 rounded-full" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                    <span>92%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Orthopedics</span>
+                                    <div class="w-2/3">
+                                        <div class="h-4 bg-neutral-700 rounded-full">
+                                            <div class="h-4 bg-emerald-500 rounded-full" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                    <span>88%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Reports -->
+                    <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                        <h3 class="text-xl font-semibold text-white mb-6">Recent Reports</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-neutral-700/30">
+                                        <th class="text-left py-3 px-4 text-neutral-400">Report ID</th>
+                                        <th class="text-left py-3 px-4 text-neutral-400">Type</th>
+                                        <th class="text-left py-3 px-4 text-neutral-400">Department</th>
+                                        <th class="text-left py-3 px-4 text-neutral-400">Date</th>
+                                        <th class="text-left py-3 px-4 text-neutral-400">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-neutral-700/30">
+                                        <td class="py-3 px-4">#RPT-2345</td>
+                                        <td class="py-3 px-4">Monthly Analytics</td>
+                                        <td class="py-3 px-4">Cardiology</td>
+                                        <td class="py-3 px-4">2023-10-01</td>
+                                        <td class="py-3 px-4"><span
+                                                class="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-full text-sm">Complete</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-neutral-700/30">
+                                        <td class="py-3 px-4">#RPT-2344</td>
+                                        <td class="py-3 px-4">Patient Satisfaction</td>
+                                        <td class="py-3 px-4">All Departments</td>
+                                        <td class="py-3 px-4">2023-09-30</td>
+                                        <td class="py-3 px-4"><span
+                                                class="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded-full text-sm">Pending</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-neutral-700/30">
+                                        <td class="py-3 px-4">#RPT-2343</td>
+                                        <td class="py-3 px-4">Revenue Analysis</td>
+                                        <td class="py-3 px-4">Finance</td>
+                                        <td class="py-3 px-4">2023-09-29</td>
+                                        <td class="py-3 px-4"><span
+                                                class="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-full text-sm">Complete</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </htmlCode>
+</element>
+<element id="fb4f063f-07ee-466d-b406-efdd03ea082f" data-section-id="fb4f063f-07ee-466d-b406-efdd03ea082f">
+
+    <htmlCode>
+        <div id="root">
+            <section id="settings-configuration"
+                class="min-h-screen bg-neutral-900 text-neutral-200 py-8 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Header -->
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-4">Settings & Configuration</h2>
+                        <p class="text-neutral-400">Manage your hospital CRM system settings and configurations</p>
+                    </div>
+
+                    <!-- Main Settings Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                        <!-- Settings Navigation -->
+                        <div class="lg:col-span-1">
+                            <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-4 backdrop-blur-sm">
+                                <nav class="space-y-2">
+                                    <a href="#general"
+                                        class="block px-4 py-2 rounded-lg bg-neutral-700/50 text-white hover:bg-neutral-700 transition duration-150">General
+                                        Settings</a>
+                                    <a href="#security"
+                                        class="block px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-700/50 hover:text-white transition duration-150">Security
+                                        & Privacy</a>
+                                    <a href="#notifications"
+                                        class="block px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-700/50 hover:text-white transition duration-150">Notifications</a>
+                                    <a href="#integrations"
+                                        class="block px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-700/50 hover:text-white transition duration-150">Integrations</a>
+                                    <a href="#users"
+                                        class="block px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-700/50 hover:text-white transition duration-150">User
+                                        Management</a>
+                                    <a href="#billing"
+                                        class="block px-4 py-2 rounded-lg text-neutral-400 hover:bg-neutral-700/50 hover:text-white transition duration-150">Billing
+                                        & Subscription</a>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Settings Content -->
+                        <div class="lg:col-span-3">
+                            <!-- General Settings -->
+                            <div
+                                class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm mb-8">
+                                <h3 class="text-xl font-semibold text-white mb-6">General Settings</h3>
+
+                                <div class="space-y-6">
+                                    <!-- Hospital Information -->
+                                    <div class="space-y-4">
+                                        <label class="block">
+                                            <span class="text-neutral-200">Hospital Name</span>
+                                            <input type="text"
+                                                class="mt-1 block w-full rounded-lg bg-neutral-700/50 border border-neutral-600 text-white px-4 py-2 focus:border-emerald-500 focus:ring-emerald-500"
+                                                value="City General Hospital">
+                                        </label>
+
+                                        <label class="block">
+                                            <span class="text-neutral-200">Contact Email</span>
+                                            <input type="email"
+                                                class="mt-1 block w-full rounded-lg bg-neutral-700/50 border border-neutral-600 text-white px-4 py-2 focus:border-emerald-500 focus:ring-emerald-500"
+                                                value="admin@citygeneral.com">
+                                        </label>
+
+                                        <label class="block">
+                                            <span class="text-neutral-200">Time Zone</span>
+                                            <select
+                                                class="mt-1 block w-full rounded-lg bg-neutral-700/50 border border-neutral-600 text-white px-4 py-2 focus:border-emerald-500 focus:ring-emerald-500">
+                                                <option>Asia/Kolkata (GMT +5:30)</option>
+                                                <option>UTC</option>
+                                                <option>Pacific Time</option>
+                                            </select>
+                                        </label>
+                                    </div>
+
+                                    <!-- System Preferences -->
+                                    <div class="pt-6 border-t border-neutral-700/30">
+                                        <h4 class="text-lg font-medium text-white mb-4">System Preferences</h4>
+
+                                        <div class="space-y-4">
+                                            <label class="flex items-center space-x-3">
+                                                <input type="checkbox"
+                                                    class="rounded bg-neutral-700/50 border-neutral-600 text-emerald-500 focus:ring-emerald-500"
+                                                    checked>
+                                                <span class="text-neutral-200">Enable Automatic Backups</span>
+                                            </label>
+
+                                            <label class="flex items-center space-x-3">
+                                                <input type="checkbox"
+                                                    class="rounded bg-neutral-700/50 border-neutral-600 text-emerald-500 focus:ring-emerald-500"
+                                                    checked>
+                                                <span class="text-neutral-200">Send Daily Reports</span>
+                                            </label>
+
+                                            <label class="flex items-center space-x-3">
+                                                <input type="checkbox"
+                                                    class="rounded bg-neutral-700/50 border-neutral-600 text-emerald-500 focus:ring-emerald-500">
+                                                <span class="text-neutral-200">Enable Beta Features</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Language Settings -->
+                                    <div class="pt-6 border-t border-neutral-700/30">
+                                        <h4 class="text-lg font-medium text-white mb-4">Language Settings</h4>
+
+                                        <div class="space-y-4">
+                                            <label class="block">
+                                                <span class="text-neutral-200">Primary Language</span>
+                                                <select
+                                                    class="mt-1 block w-full rounded-lg bg-neutral-700/50 border border-neutral-600 text-white px-4 py-2 focus:border-emerald-500 focus:ring-emerald-500">
+                                                    <option>English</option>
+                                                    <option>Hindi</option>
+                                                    <option>Bengali</option>
+                                                    <option>Tamil</option>
+                                                </select>
+                                            </label>
+
+                                            <label class="flex items-center space-x-3">
+                                                <input type="checkbox"
+                                                    class="rounded bg-neutral-700/50 border-neutral-600 text-emerald-500 focus:ring-emerald-500"
+                                                    checked>
+                                                <span class="text-neutral-200">Enable Multi-language Support</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Save Button -->
+                                <div class="mt-8 flex justify-end">
+                                    <button
+                                        class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition duration-150">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- API Keys Section -->
+                            <div class="bg-neutral-800/50 border border-neutral-700/30 rounded-lg p-6 backdrop-blur-sm">
+                                <h3 class="text-xl font-semibold text-white mb-6">API Configuration</h3>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-4 bg-neutral-700/30 rounded-lg">
+                                        <div>
+                                            <h4 class="text-white font-medium">Production API Key</h4>
+                                            <p class="text-neutral-400 text-sm">Last used: 2 hours ago</p>
+                                        </div>
+                                        <button
+                                            class="px-4 py-2 bg-neutral-600 text-white rounded hover:bg-neutral-500 transition duration-150">
+                                            Regenerate
+                                        </button>
+                                    </div>
+
+                                    <div class="flex items-center justify-between p-4 bg-neutral-700/30 rounded-lg">
+                                        <div>
+                                            <h4 class="text-white font-medium">Test API Key</h4>
+                                            <p class="text-neutral-400 text-sm">Last used: 5 days ago</p>
+                                        </div>
+                                        <button
+                                            class="px-4 py-2 bg-neutral-600 text-white rounded hover:bg-neutral-500 transition duration-150">
+                                            Regenerate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </htmlCode>
+</element>
+<div id="page_complete">
+    <script>
+        console.log('Page complete');
+    </script>
+    </body>
+
+    </html>
